@@ -9,6 +9,7 @@ import {
 } from "react-router-dom";
 import Products from './components/pages/products/Products'
 import Basket from './components/pages/basket/Basket';
+import ProductBody from './components/pages/productBody/ProductBody';
 import { Provider } from 'react-redux';
 import { store } from './store/store';
 
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
   {
     path: "/basket",
     element: <Basket/>,
+  },
+  {
+    path: "/product/:id",
+    element: <ProductBody/>,
   },
 ]);
 

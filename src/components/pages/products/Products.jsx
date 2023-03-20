@@ -38,7 +38,6 @@ let ending = ['р', 'ра', 'ров']
           <Link to={'/basket'}>
             <BasketIcon/>
           </Link>
-
         </div>
       </header>
       <CardList

@@ -14,26 +14,35 @@ const Basket = () => {
 
   return (
     <div className={styles.basketPage}>
-      <div className={styles.basketPage__container}>
-        <header className={styles.basketPage__header}>
-          <Link to={'/'} className={styles["basketPage__header-icon"]}>
-            <BackIcon/>
-          </Link>
-          <h2 className={styles["basketPage__header-title"]}>Корзина с выбранными товарами</h2>
-        </header>
-        <main className={styles.basketPage__main}>
+      <header className={styles.basketPage__header}>
+        <div className={styles['basketPage__header-container']}>
+          <div className={styles['basketPage__header-blockIcon']}>
+            <Link to={'/'} className={styles["basketPage__header-icon"]}>
+              <BackIcon/>
+            </Link>
+            <h2 className={styles["basketPage__header-title"]}>Корзина с выбранными товарами</h2>
+          </div>
+          <Button
+          text='Выйти'/>
+        </div>
+      </header>
+      <main className={styles.basketPage__main}>
+        <div className={styles['basketPage__main-container']}>
           <CardBasketList
             productsBasket={productsBasket}
           />
-        </main>
-        <footer className={styles.basketPage__footer}>
+        </div>
+      </main>
+      <footer className={styles.basketPage__footer}>
+        <div className={styles['basketPage__footer-container']}>
           <div className={styles["basketPage__footer-textSum"]}>
             <span className={styles["basketPage__footer-text"]}>Заказ на сумму:</span>
-            <span className={styles["basketPage__footer-sum"]}>{Intl.NumberFormat("ru").format(sumPrice)} ₽</span>            
+            <span className={styles["basketPage__footer-sum"]}>{Intl.NumberFormat("ru").format(sumPrice)} ₽</span>
           </div>
           <Button text='Оформить заказ'/>
-        </footer>
-      </div>
+        </div>
+        
+      </footer>
     </div>
   )
 }

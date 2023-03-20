@@ -1,0 +1,13 @@
+.productBody {
+  height: 100vh;
+  background-color: #161516;
+}
+
+.productBody__header {
+  padding: 20px 0;
+}
+
+.productBody__header-container {
+  max-width: 1300px;
+  margin: 0 auto;
+}
