@@ -21,17 +21,3 @@
   text-transform: uppercase;
 }
 
-.basketAmount {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.basketAmount-descr {
-  margin-right: 20px;
-  font-weight: 500;
-  font-size: 17px;
-  line-height: 21px;
-  text-align: right;
-
-}
