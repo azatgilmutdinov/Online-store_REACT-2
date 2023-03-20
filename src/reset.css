@@ -1,0 +1,58 @@
+*,
+*::before,
+*::after {
+	padding: 0;
+	margin: 0;
+	border: 0;
+	box-sizing: border-box;
+}
+a {
+	text-decoration: none;
+}
+ul,
+ol,
+li {
+	list-style: none;
+}
+img {
+	vertical-align: top;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: inherit;
+	font-size: inherit;
+}
+html,
+body {
+	height: 100%;
+	font-size: 14px; /*базовый размер шрифта*/
+	font-family: 'Montserrat', sans-serif;/*базовый шрифт*/
+	color: #fff;/*базовый цвет шрифта*/
+}
+
+
+/*СТИЛИЗАЦИЯ СКРОЛЛА*/
+/* W3C standard
+   сейчас только для Firefox */
+* {
+		scrollbar-width: thin;
+		scrollbar-color: blue orange;
+	}
+	
+/* для Chrome/Edge/Safari */
+*::-webkit-scrollbar {
+	height: 12px;
+	width: 12px;
+}
+*::-webkit-scrollbar-track {
+	background: rgba(253, 165, 0, 0.4);
+}
+*::-webkit-scrollbar-thumb {
+	background-color: rgb(255, 106, 0);
+	border-radius: 5px;
+	border: 1px solid rgba(255, 255, 255, 0.1);
+}

@@ -1,0 +1,47 @@
+.cardBasket {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 35px;
+}
+
+.cardBasket__img-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardBasket__img {
+  display: block;
+  height: 122px;
+  width: auto;
+}
+
+.cardBasket__title {
+  margin-left: 88px;
+  flex: 1 1 auto;
+  max-width: 310px;
+
+
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 21px;
+
+  color: #FFFFFF;
+}
+
+.cardBasket__price-cross {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  
+}
+.price {
+  margin-right: 15px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+
+  color: #D58C51;
+}

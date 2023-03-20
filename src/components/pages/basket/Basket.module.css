@@ -1,0 +1,83 @@
+.basketPage {
+  height: 100vh;
+  color: #fff;
+  background-color: #161516;
+  overflow-x: hidden; /*для горизонтальной полоски в футере*/
+}
+.basketPage__container {
+  min-height: 100%;
+  max-width: 860px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.basketPage__header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 53px 0 38px 0;
+}
+
+.basketPage__header-icon {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(0, -25%);
+}
+
+.basketPage__header-title {
+  text-align: center;
+  font-weight: 700;
+  font-size: 31px;
+  line-height: 38px;
+  text-transform: uppercase;
+}
+
+.basketPage__main{
+  flex: 1 1 auto;
+}
+.basketPage__footer {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0 27px 0;
+  /* border-top: 1px solid #D58C51;; */
+}
+
+.basketPage__footer::before, .basketPage__footer::after {
+  position: absolute;
+  content: '';
+  background-color: #D58C51;
+  width: 100vw;
+  height: 1px;
+  top: 0;
+  bottom: 0;
+}
+.basketPage__footer::before {
+  right: 0;
+}
+.basketPage__footer::after {
+  /* left: 0; */
+}
+
+
+.basketPage__footer-text {
+  font-size: 21px;
+  line-height: 26px;
+  text-transform: uppercase;
+
+  color: #FFFFFF;
+}
+
+.basketPage__footer-sum {
+  margin-left: 16px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+
+  color: #D58C51;
+}

@@ -1,0 +1,12 @@
+.basketIcon {
+  display: block;
+  padding: 15px;
+  border-radius: 100%;
+  background: #D58C51;
+  cursor: pointer;
+}
+
+.basketIcon:hover {
+  background: #d77d32;
+  box-shadow: 0px 0px 35px -3px rgba(222, 232, 240, 0.5);
+}
