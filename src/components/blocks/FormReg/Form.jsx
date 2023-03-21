@@ -9,27 +9,27 @@ const Form = ({title, linkText, link, buttonText}) => {
       <Link to={link} className="form__link">{linkText}</Link>
       <h2 className="form__title">{title}</h2>
       <div className="form__wrapperInput form__wrapperInput_email">
-        <input type="email" class="form__input form-input form-input_email" placeholder="Логин"></input>
+        <input type="email" className="form__input form-input form-input_email" placeholder="Логин"></input>
 
-        <p class="form__text-error text-error text-error_email-invalid">Логин должен содержать не менее 4-х символов</p>
-        <p class="form__text-error text-error text-error_email-empty">Поле не должно быть пустым</p>
+        <p className="form__text-error text-error text-error_email-invalid">Логин должен содержать не менее 4-х символов</p>
+        <p className="form__text-error text-error text-error_email-empty">Поле не должно быть пустым</p>
       </div>
       
       <div className="form__wrapperInput form__wrapperInput_password">
-        <input type="password" class="form__input form-input form-input_password" placeholder="Пароль"></input>
+        <input type="password" className="form__input form-input form-input_password" placeholder="Пароль"></input>
 
-        <p class="form__text-error text-error text-error_password-invalid">Пароль должен содержать не менее 4-х символов</p>
-        <p class="form__text-error text-error text-error_password-empty">Поле не должно быть пустым</p>
+        <p className="form__text-error text-error text-error_password-invalid">Пароль должен содержать не менее 4-х символов</p>
+        <p className="form__text-error text-error text-error_password-empty">Поле не должно быть пустым</p>
       </div>
       
 
-      <label  class="form__checkbox form-checkbox">
-        <input type="checkbox" class="form-checkbox__real"></input>
-        <span class="form-checkbox__custom"></span>
-        <p class="form-checkbox__text">Я согласен получать обновления на почту</p>
+      <label  className="form__checkbox form-checkbox">
+        <input type="checkbox" className="form-checkbox__real"></input>
+        <span className="form-checkbox__custom"></span>
+        <p className="form-checkbox__text">Я согласен получать обновления на почту</p>
       </label>
 
-      <p class="form__text-error text-error text-error_emailPassword-invalid">Логин или пароль неверен</p>
+      <p className="form__text-error text-error text-error_emailPassword-invalid">Логин или пароль неверен</p>
 
       <div className="form__button-wrapper">
         <Button
