@@ -9,20 +9,20 @@ import { useState } from 'react'
 import { useSelector } from 'react-redux'
 
 const Card = ({urlImg, title, descr, price, weight, unit, id}) => {
-  const addCurrent = useSelector(state => state.productsList.basketProducts.find(item => item.id === id))
+  // const addCurrent = useSelector(state => state.productsList.basketProducts.find(item => item.id === id))
 
-  let amountCount = 0
+  // let amountCount = 0
 
-  if (addCurrent) {
-    amountCount = addCurrent.amount
+  // if (addCurrent) {
+  //   amountCount = addCurrent.amount
 
-  }
-  const [amount, setAmount] = useState(amountCount)
+  // }
+  // const [amount, setAmount] = useState(amountCount)
 
   const dispatch = useDispatch();
 
   const addProduct = (event) => {
-    setAmount(amount + 1)
+    // setAmount(amount + 1)
     event.stopPropagation()
     const item = {
       id: id,
@@ -30,7 +30,7 @@ const Card = ({urlImg, title, descr, price, weight, unit, id}) => {
       urlImg: urlImg,
       title: title,
       price: price,
-      amount: amount,
+      // amount: amount,
     }
 
     dispatch(addProductsBasket(item))
@@ -49,7 +49,7 @@ const Card = ({urlImg, title, descr, price, weight, unit, id}) => {
         <div className={styles["price-weight"]}>
           <span className={styles.price}>{Intl.NumberFormat("ru").format(price)} ₽ / </span>
           <span className={styles.weight}>{weight} {unit}</span>
-          <span>{amountCount>=1 ? amount : ''}</span>
+          {/* <span>{amountCount>=1 ? amount : ''}</span> */}
         </div>
         <Addition
           onclickFunction={addProduct}

@@ -5,17 +5,29 @@ import BasketData from '../../elements/basketData/BasketData.jsx'
 import Button from '../../UI/Button/Button'
 import { useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
+import { addProductsBasket } from '../../../store/reducers/productsReducers'
 
 
 const ProductBody = () => {
   const { id } = useParams();
-  console.log('id: ', id);
+  // console.log('id: ', id);
   const {urlImg, title, body, price, weight, unit } = useSelector(state => state.productsList.productsList.find(item => item.id == id))
 
-  console.log('urlImg', urlImg);
+  // console.log('urlImg', urlImg);
   
 
+  const dispatch = useDispatch()
+  const addItemProduct = () => {
+    const item = {
+      id: id,
+      urlImg: urlImg,
+      title: title,
+      price: price,
+    }
 
+    dispatch(addProductsBasket(item))
+  }
 
 
   return (
@@ -51,6 +63,7 @@ const ProductBody = () => {
               <Button 
                 text='В корзину'
                 type='orange'
+                onclickFunction={addItemProduct}
               />
             </div>
 
