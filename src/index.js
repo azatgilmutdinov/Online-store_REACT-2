@@ -10,12 +10,17 @@ import {
 import Products from './components/pages/products/Products'
 import Basket from './components/pages/basket/Basket';
 import ProductBody from './components/pages/productBody/ProductBody';
+import GeneralPage from './components/pages/general/GeneralPage';
 import { Provider } from 'react-redux';
 import { store } from './store/store';
 
 const router = createBrowserRouter([
   {
     path: "/",
+    element: <GeneralPage/>,
+  },
+  {
+    path: "/product",
     element: <Products/>,
   },
   {
@@ -34,7 +39,6 @@ root.render(
     <Provider store={store}>
       <RouterProvider router={router} />
     </Provider>
-
   </React.StrictMode>
 );
 

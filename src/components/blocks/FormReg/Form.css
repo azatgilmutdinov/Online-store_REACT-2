@@ -1,0 +1,116 @@
+.form {
+  position: relative;
+  padding: 9px 20px 34px 20px;
+  width: 460px;
+  height: 340px;
+
+  background: #FFFFFF;
+  color: black;
+  border-radius: 10px;
+}
+
+.form__link {
+  display: block;
+  font-weight: 300;
+  font-size: 11px;
+  line-height: 13px;
+  text-align: right;
+  text-decoration-line: underline;
+
+  color: #D58C51;
+}
+
+.form__link:hover {
+  color: #ff1e00;
+}
+
+.form__title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+  margin-bottom: 36px;
+  font-weight: 700;
+  font-size: 31px;
+  line-height: 27px;
+  text-transform: uppercase;
+
+  color: #161516;
+}
+
+.form__wrapperInput {
+  position: relative;
+  margin-bottom: 15px;
+
+}
+
+.form__input {
+  padding: 10px 18px;
+  /* margin-bottom: 15px; */
+  width: 100%;
+
+  border: 1px solid #D58C51;
+  border-radius: 61px;
+
+  font-family: 'Montserrat';
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  
+  color: #161516;
+}
+.form__input::placeholder {
+  font-family: 'Montserrat';
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  
+  color: #161516;
+}
+
+.form__text-error {
+  position: absolute;
+  padding-left: 18px;
+  font-weight: 300;
+  font-size: 8px;
+  line-height: 10px;
+
+  color: #FF0B0B;
+}
+
+.text-error_email-invalid, .text-error_email-empty, .text-error_password-invalid, .text-error_password-empty {
+  display: none;
+}
+
+.form-checkbox {
+  display: flex;
+
+}
+
+.form-checkbox__text {
+  margin-left: 10px;
+  font-weight: 300;
+  font-size: 11px;
+  line-height: 13px;
+  /* identical to box height */
+
+
+  color: #301411;
+}
+
+.text-error_emailPassword-invalid {
+  position: absolute;
+  bottom: 88px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.form__button-wrapper {
+  position: absolute;
+  bottom: 34px;
+  left: 50%;
+  transform: translateX(-50%);
+
+}
+
+
