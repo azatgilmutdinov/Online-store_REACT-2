@@ -3,11 +3,13 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 35px;
+  padding: 5px 10px;
 }
 
 .cardBasket:hover{
   cursor: pointer;
-  background-color: #575353;
+  background-color: #3a3838;
+  border-radius: 20px;
 }
 
 .cardBasket__img-title {

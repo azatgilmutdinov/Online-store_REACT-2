@@ -36,11 +36,10 @@ body {
 
 
 /*СТИЛИЗАЦИЯ СКРОЛЛА*/
-/* W3C standard
-   сейчас только для Firefox */
+
 * {
 		scrollbar-width: thin;
-		scrollbar-color: blue orange;
+		scrollbar-color:  rgb(172, 113, 2);
 	}
 	
 /* для Chrome/Edge/Safari */
@@ -49,10 +48,10 @@ body {
 	width: 12px;
 }
 *::-webkit-scrollbar-track {
-	background: rgba(253, 165, 0, 0.4);
+	background: rgb(53, 50, 50);
 }
 *::-webkit-scrollbar-thumb {
-	background-color: rgb(255, 106, 0);
+	background-color: rgb(38, 22, 11);
 	border-radius: 5px;
-	border: 1px solid rgba(255, 255, 255, 0.1);
+	border: 1px solid rgb(21, 17, 17);
 }
