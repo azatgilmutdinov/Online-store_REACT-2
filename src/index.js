@@ -13,11 +13,23 @@ import ProductBody from './components/pages/productBody/ProductBody';
 import GeneralPage from './components/pages/general/GeneralPage';
 import { Provider } from 'react-redux';
 import { store } from './store/store';
+import FormAuthor from './components/pages/FormAuthor';
+import FormReg from './components/pages/FormReg';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <GeneralPage/>,
+    children: [
+      {
+        path: "/",
+        element: <FormAuthor/>,
+      },
+      {
+        path: "/registration",
+        element: <FormReg/>,
+      },
+    ]
   },
   {
     path: "/product",

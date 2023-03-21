@@ -1,11 +1,12 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import Button from '../../UI/Button/Button'
 import './Form.css'
 
-const Form = ({title, link, buttonText}) => {
+const Form = ({title, linkText, link, buttonText}) => {
   return (
     <form action="#" className="form">
-      <a href="" className="form__link">{link}</a>
+      <Link to={link} className="form__link">{linkText}</Link>
       <h2 className="form__title">{title}</h2>
       <div className="form__wrapperInput form__wrapperInput_email">
         <input type="email" class="form__input form-input form-input_email" placeholder="Логин"></input>
