@@ -3,8 +3,21 @@ import styles from './ProductBody.module.css'
 import BackIcon from '../../UI/BackIcon/BackIcon'
 import BasketData from '../../elements/basketData/BasketData.jsx'
 import Button from '../../UI/Button/Button'
+import { useParams } from 'react-router-dom'
+import { useSelector } from 'react-redux'
+
 
 const ProductBody = () => {
+  const { id } = useParams();
+  console.log('id: ', id);
+  const {urlImg, title, descr, price, weight, unit } = useSelector(state => state.productsList.productsList.find(item => item.id == id))
+
+  console.log('urlImg', urlImg);
+  
+
+
+
+
   return (
     <div className={styles.productBody}>
       <header className={styles.productBody__header}>
@@ -23,16 +36,16 @@ const ProductBody = () => {
         <div className={styles['productBody__main-container']}>
           <img
             className={styles['productBody__main-cardImage']}
-            src="/images/card/1.png" 
+            src={urlImg} 
             alt="" 
           />
           <div className={`${styles['productBody__main-cardBody']} ${styles['main-cardBody']}`}>
-            <h1 className={styles['main-cardBody__title']}>Свиные ребрышки на гриле</h1>
-            <div className={styles['main-cardBody__descr']}>Не следует, однако забывать, что консультация с широким активом представляет собой интересный эксперимент проверки новых предложений. Не следует, однако забывать, что сложившаяся структура организации позволяет оценить значение новых предложений. Разнообразный и богатый опыт начало повседневной работы по формированию позиции требуют от нас анализа позиций.Не следует, однако забывать, что консультация с широким активом представляет собой интересный эксперимент проверки новых предложений. Не следует, однако забывать, что сложившаяся структура организации позволяет оценить значение новых предложений</div>
+            <h1 className={styles['main-cardBody__title']}>{title}</h1>
+            <div className={styles['main-cardBody__descr']}>{descr}</div>
             <div className={styles['main-cardBody__price-weight-btnBasket']}>
               <div className={styles["price-weight-btnBasket"]}>
-                <span className={styles['price-weight-btnBasket__price']}>{Intl.NumberFormat("ru").format(1820)} ₽ / </span>
-                <span className={styles['price-weight-btnBasket__weight']}>{750} {'г.'}</span>
+                <span className={styles['price-weight-btnBasket__price']}>{Intl.NumberFormat("ru").format(price)} ₽ / </span>
+                <span className={styles['price-weight-btnBasket__weight']}>{weight} {unit}</span>
               </div>
               <Button 
               text='В корзину'

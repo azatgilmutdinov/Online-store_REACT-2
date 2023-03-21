@@ -17,9 +17,9 @@ const Basket = () => {
       <header className={styles.basketPage__header}>
         <div className={styles['basketPage__header-container']}>
           <div className={styles['basketPage__header-blockIcon']}>
-            <Link to={'/'} className={styles["basketPage__header-icon"]}>
+            {/* <Link to={'/'} className={styles["basketPage__header-icon"]}> */}
               <BackIcon/>
-            </Link>
+            {/* </Link> */}
             <h2 className={styles["basketPage__header-title"]}>Корзина с выбранными товарами</h2>
           </div>
           <Button

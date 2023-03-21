@@ -10,7 +10,8 @@ const CardBasketList = ({productsBasket}) => {
         return (
           <CardBasket
             key={item.index}
-            id={item.index}
+            id={item.id}
+            index={item.index}
             urlImg={item.urlImg}
             title={item.title}
             price={item.price}

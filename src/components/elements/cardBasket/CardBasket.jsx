@@ -3,16 +3,21 @@ import Remove from '../../UI/Remove/Remove'
 import styles from './CardBasket.module.css'
 import { removeProductBasket } from '../../../store/reducers/productsReducers'
 import { useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 
-const CardBasket = ({urlImg, price, title, id}) => {
+const CardBasket = ({urlImg, price, title, id, index}) => {
+  console.log('urlImg: ', urlImg);
   const dispatch = useDispatch()
 
-  const removeItemProducts = () => {
-    dispatch(removeProductBasket(id))
+  const removeItemProducts = (event) => {
+    event.stopPropagation()
+    dispatch(removeProductBasket(index))
   }
+  const goToCardBody = useNavigate()
+
 
   return (
-    <div className={styles.cardBasket}>
+    <div className={styles.cardBasket} onClick={() => goToCardBody(`/product/${id}`)}>
       <div className={styles['cardBasket__img-title']}>
         <img src={urlImg} alt="" className={styles.cardBasket__img} />
         <h2 className={styles.cardBasket__title}>{title}</h2>
