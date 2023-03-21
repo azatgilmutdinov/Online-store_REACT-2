@@ -17,7 +17,9 @@ export const productsSlice = createSlice({
   name: 'productsList',
   initialState,
   reducers: {
+
     addProductsBasket: (state, action) => {
+
       state.basketProducts.push(action.payload)
 
       state.countProductsBasket = counter(state.basketProducts)
@@ -26,6 +28,7 @@ export const productsSlice = createSlice({
         return acc + cur.price
       }, 0)
     },
+    
     removeProductBasket: (state, action) => {
       state.basketProducts = state.basketProducts.filter((item) => {
         return item.index !== action.payload
@@ -40,5 +43,5 @@ export const productsSlice = createSlice({
   }
 })
 
-export const {addProductsBasket, removeProductBasket} = productsSlice.actions
+export const {addProductsBasket, removeProductBasket, test} = productsSlice.actions
 export default productsSlice.reducer

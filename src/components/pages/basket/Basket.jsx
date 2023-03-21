@@ -39,7 +39,7 @@ const Basket = () => {
             <span className={styles["basketPage__footer-text"]}>Заказ на сумму:</span>
             <span className={styles["basketPage__footer-sum"]}>{Intl.NumberFormat("ru").format(sumPrice)} ₽</span>
           </div>
-          <Button text='Оформить заказ'/>
+          <Button text='Оформить заказ' type='orange'/>
         </div>
         
       </footer>

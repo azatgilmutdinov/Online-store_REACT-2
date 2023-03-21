@@ -4,13 +4,13 @@
 }
 
 .productBody__header {
-  padding: 20px 0;
+  padding: 50px 0 20px 0;
 }
 
 .productBody__header-container, .productBody__main-container {
   max-width: 1300px;
   margin: 0 auto;
-  padding: 0 15px;
+  /* padding: 0 15px; */
 }
 
 .productBody__header-container {
@@ -21,6 +21,11 @@
 
 .productBody__header-basketBtn {
   display: flex;
+  align-items: center;
+}
+
+.productBody__header-basketBtn > button {
+  margin-left: 22px;
 }
 
 .productBody__main {
@@ -32,7 +37,7 @@
 
 .productBody__main-container {
   display: flex;
-  height: calc(100vh - 91px);
+  height: calc(100vh - 121px);
   align-items: center;
   justify-content: center;
 }

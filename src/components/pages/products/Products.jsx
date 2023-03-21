@@ -5,6 +5,7 @@ import BasketIcon from '../../UI/BasketIcon/BasketIcon.jsx'
 import styles from './Products.module.css'
 import { useSelector } from 'react-redux'
 import BasketData from '../../elements/basketData/BasketData.jsx'
+import Button from '../../UI/Button/Button.jsx'
 
 
 
@@ -17,7 +18,14 @@ const Products = () => {
     <div className={styles.container}>
       <header className={styles.header}>
         <h1 className={styles.title}>Наша продукция</h1>
-        <BasketData/>
+        <div className={styles['basket-btn']}>
+          <BasketData/>
+          <Button 
+            text='Выйти'
+            type=''
+          />
+        </div>
+
       </header>
       <CardList
         products={products}

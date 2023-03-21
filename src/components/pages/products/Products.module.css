@@ -21,3 +21,12 @@
   text-transform: uppercase;
 }
 
+.basket-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.basket-btn > button {
+  margin-left: 22px;
+}

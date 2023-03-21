@@ -27,6 +27,7 @@ const ProductBody = () => {
             <BasketData/>
             <Button 
               text='Выйти'
+              type=''
             />
           </div>
 
@@ -48,7 +49,8 @@ const ProductBody = () => {
                 <span className={styles['price-weight-btnBasket__weight']}>{weight} {unit}</span>
               </div>
               <Button 
-              text='В корзину'
+                text='В корзину'
+                type='orange'
               />
             </div>
 

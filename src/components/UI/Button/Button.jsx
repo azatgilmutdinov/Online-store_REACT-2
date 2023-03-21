@@ -1,9 +1,10 @@
 import React from 'react'
 import styles from './Button.module.css'
 
-const Button = ({text}) => {
+const Button = ({text, type}) => {
+  
   return (
-    <button className={styles.button}>{text}</button>
+    <button className={type==='orange' ?  `${styles.button} ${styles.buttonOrange}` : `${styles.button} ${styles.buttonLimpid}`}>{text}</button>
   )
 }
 
