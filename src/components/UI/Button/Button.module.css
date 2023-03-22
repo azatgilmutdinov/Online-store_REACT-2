@@ -14,9 +14,7 @@
 
 }
 
-.buttonOrange[disabled] {
-  opacity: 0.3;
-}
+
 
 /*Мофикатор*/
 .buttonOrange {
@@ -36,4 +34,7 @@
 
 .buttonLimpid:hover {
     background-color: #22180f;
+}
+.buttonOrange[disabled] {
+  opacity: 0.3;
 }
