@@ -14,6 +14,10 @@
 
 }
 
+.buttonOrange[disabled] {
+  opacity: 0.3;
+}
+
 /*Мофикатор*/
 .buttonOrange {
   background-color: #D58C51;
