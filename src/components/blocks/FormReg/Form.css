@@ -28,7 +28,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 15px;
+  margin-top: 18px;
   margin-bottom: 36px;
   font-weight: 700;
   font-size: 31px;
@@ -84,6 +84,7 @@
 
 .form-checkbox {
   display: flex;
+  align-items: center;
 
 }
 
@@ -113,4 +114,47 @@
 
 }
 
+/*ЧЕКБОКСЫ*/
+.form-checkbox__real {
+  /*Скрываем стандартный чекбокс*/
+  width: 0;
+  height: 0;
+  opacity: 0;
+  position: absolute;
+}
 
+.form-checkbox__custom {
+  position: relative;
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+
+  border: 1px solid #D58C51;
+  vertical-align: sub;
+}
+
+.form-checkbox__custom::before {
+  content: '';
+  /*Рисуем галочку*/
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  background-color: #D58C51;;
+  border-radius: 50%;
+    /* background-size: contain;
+  background-repeat: no-repeat; */
+
+    /*Выравниваем галочку*/
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(0);/*scale - чтобы по умолчанию убрать галочку*/
+  /* margin-left: 0px;
+  margin-top: 0px; */
+}
+
+/*--Активируем custom-checkbox--*/
+.form-checkbox__real:checked  + .form-checkbox__custom::before{
+  transform: translate(-50%, -50%) scale(1);
+}
