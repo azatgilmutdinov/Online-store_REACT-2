@@ -39,7 +39,7 @@ export const productsSlice = createSlice({
       state.sumPriceProductsBasket = state.basketProducts.reduce((acc, cur) => {
         return acc + cur.price
       }, 0)
-    }
+    },
   }
 })
 

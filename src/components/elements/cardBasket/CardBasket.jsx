@@ -6,7 +6,7 @@ import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 
 const CardBasket = ({urlImg, price, title, id, index}) => {
-  console.log('urlImg: ', urlImg);
+  // console.log('urlImg: ', urlImg);
   const dispatch = useDispatch()
 
   const removeItemProducts = (event) => {
