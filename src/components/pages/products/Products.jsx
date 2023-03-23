@@ -22,7 +22,7 @@ const Products = () => {
           <BasketData/>
           <Button 
             text='Выйти'
-            type=''
+            typeBtn=''
           />
         </div>
 

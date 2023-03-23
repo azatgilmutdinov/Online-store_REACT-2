@@ -43,7 +43,7 @@ const ProductBody = () => {
             <BasketData/>
             <Button 
               text='Выйти'
-              type=''
+              typeBtn=''
             />
           </div>
 
@@ -67,7 +67,7 @@ const ProductBody = () => {
               <Button 
                 // text='В корзину'
                 text={countProductsBasket >= 1 ? 'Добавлено' : 'В корзину'}
-                type='orange'
+                typeBtn='orange'
                 onclickFunction={addItemProduct}
                 disabled={countProductsBasket < 1 ? false : true}
               />

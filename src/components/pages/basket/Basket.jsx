@@ -23,7 +23,8 @@ const Basket = () => {
             <h2 className={styles["basketPage__header-title"]}>Корзина с выбранными товарами</h2>
           </div>
           <Button
-          text='Выйти'/>
+            text='Выйти'
+          />
         </div>
       </header>
       <main className={styles.basketPage__main}>
@@ -39,7 +40,10 @@ const Basket = () => {
             <span className={styles["basketPage__footer-text"]}>Заказ на сумму:</span>
             <span className={styles["basketPage__footer-sum"]}>{Intl.NumberFormat("ru").format(sumPrice)} ₽</span>
           </div>
-          <Button text='Оформить заказ' type='orange'/>
+          <Button 
+            text='Оформить заказ' 
+            typeBtn='orange'
+          />
         </div>
         
       </footer>
