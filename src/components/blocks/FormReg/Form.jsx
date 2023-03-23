@@ -9,8 +9,9 @@ const Form = ({title, linkText, link, buttonText}) => {
 
   const testFunc = (event) => {
     setValuMess(event.target.value)
-    console.log('event.target.value', event.target.value);
-    // console.log('valueMess', valueMess);
+
+    console.log('event.target.value - ', event.target.value);
+    console.log('valueMess - ', valueMess);
   }
   if (valueMess.length < 5) {
 
@@ -26,7 +27,7 @@ const Form = ({title, linkText, link, buttonText}) => {
           className="form__input form-input form-input_email" 
           placeholder="Логин"
           value={valueMess}
-          onInput={testFunc}
+          onChange={testFunc}
         ></input>
 
         <p 

@@ -141,17 +141,14 @@
   width: 11px;
   height: 11px;
   background-color: #D58C51;;
-  border-radius: 50%;
-    /* background-size: contain;
-  background-repeat: no-repeat; */
+  box-shadow: 0px 0px 8px 3px rgba(174, 126, 72, 0.25);
+  border-radius: 100%;
 
-    /*Выравниваем галочку*/
+  /*Выравниваем галочку*/
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%) scale(0);/*scale - чтобы по умолчанию убрать галочку*/
-  /* margin-left: 0px;
-  margin-top: 0px; */
 }
 
 /*--Активируем custom-checkbox--*/
