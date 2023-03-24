@@ -25,9 +25,8 @@ const Basket = () => {
   const dispatch = useDispatch();
 
   const submitBasket = () => {
-    alert('Заказ сформирован, ожидайте')
+    alert('Заказ сформирован, спасибо! Теперь вы можете сделать новый заказ!')
     dispatch(clearBasket())
-
   }
 
   return (

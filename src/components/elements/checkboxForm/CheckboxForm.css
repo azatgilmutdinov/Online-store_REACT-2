@@ -2,6 +2,7 @@
 .form-checkbox {
   display: flex;
   align-items: center;
+  margin-top: 5px;
 }
 
 .form-checkbox__text {
