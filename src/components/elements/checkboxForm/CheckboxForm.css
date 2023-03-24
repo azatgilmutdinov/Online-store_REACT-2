@@ -1,4 +1,20 @@
 /*ЧЕКБОКСЫ*/
+.form-checkbox {
+  display: flex;
+  align-items: center;
+}
+
+.form-checkbox__text {
+  margin-left: 10px;
+  font-weight: 300;
+  font-size: 11px;
+  line-height: 13px;
+  /* identical to box height */
+
+
+  color: #301411;
+}
+
 .form-checkbox__real {
   /*Скрываем стандартный чекбокс*/
   width: 0;

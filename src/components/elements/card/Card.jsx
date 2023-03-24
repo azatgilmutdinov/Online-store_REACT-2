@@ -29,10 +29,7 @@ const Card = ({urlImg, title, descr, price, weight, unit, id}) => {
     }
     setAmount(countProductsBasket+1)
     dispatch(addProductsBasket(item))
-
   }
-
-
 
   const goToCardBody = useNavigate()
 

@@ -23,16 +23,17 @@ export const productsSlice = createSlice({
       state.basketProducts.push(action.payload)
 
       state.countProductsBasket = counter(state.basketProducts)
-      // state.countProductsBasket = state.basketProducts.length
+
       state.sumPriceProductsBasket = state.basketProducts.reduce((acc, cur) => {
         return acc + cur.price
       }, 0)
     },
 
+    //функция которая очищает корзину, нужна для
     clearBasket: (state, action) => {
       state.basketProducts = []
       state.countProductsBasket = counter(state.basketProducts)
-      // state.countProductsBasket = state.basketProducts.length
+
       state.sumPriceProductsBasket = state.basketProducts.reduce((acc, cur) => {
         return acc + cur.price
       }, 0)
@@ -44,7 +45,7 @@ export const productsSlice = createSlice({
       })
 
       state.countProductsBasket = counter(state.basketProducts)
-      // state.countProductsBasket = state.basketProducts.length
+
       state.sumPriceProductsBasket = state.basketProducts.reduce((acc, cur) => {
         return acc + cur.price
       }, 0)

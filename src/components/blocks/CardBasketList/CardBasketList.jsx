@@ -1,11 +1,10 @@
 import React from 'react'
 import CardBasket from '../../elements/cardBasket/CardBasket'
-import styles from './CardBasketList.module.css'
-// import { products } from '../../../Products'
+// import styles from './CardBasketList.module.css'
 
 const CardBasketList = ({productsBasket}) => {
   return (
-    <div className={styles.cardBasketList}>
+    <div>
       {productsBasket.map(item => {
         return (
           <CardBasket

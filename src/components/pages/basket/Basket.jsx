@@ -3,11 +3,11 @@ import CardBasketList from '../../blocks/CardBasketList/CardBasketList'
 import BackIcon from '../../UI/BackIcon/BackIcon'
 import Button from '../../UI/Button/Button'
 import styles from './Basket.module.css'
-import {Link} from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { clearBasket } from '../../../store/reducers/productsReducers'
 import { useDispatch } from 'react-redux'
+import Private from '../../hooksCustom/Private'
 
 const Basket = () => {
   let productsBasket = useSelector(state => state.productsList.basketProducts)
@@ -31,13 +31,12 @@ const Basket = () => {
   }
 
   return (
-    <div className={styles.basketPage}>
+    <Private>
+      <div className={styles.basketPage}>
       <header className={styles.basketPage__header}>
         <div className={styles['basketPage__header-container']}>
           <div className={styles['basketPage__header-blockIcon']}>
-            {/* <Link to={'/'} className={styles["basketPage__header-icon"]}> */}
-              <BackIcon/>
-            {/* </Link> */}
+            <BackIcon/>
             <h2 className={styles["basketPage__header-title"]}>Корзина с выбранными товарами</h2>
           </div>
           <Button
@@ -68,6 +67,8 @@ const Basket = () => {
         
       </footer>
     </div>
+    </Private>
+    
   )
 }
 

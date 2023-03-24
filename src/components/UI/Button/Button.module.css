@@ -11,10 +11,7 @@
 .button:hover {
   cursor: pointer;
   box-shadow: 0px 0px 8px 3px rgba(174, 126, 72, 0.25);
-
 }
-
-
 
 /*Мофикатор*/
 .buttonOrange {
