@@ -28,6 +28,15 @@ export const productsSlice = createSlice({
         return acc + cur.price
       }, 0)
     },
+
+    clearBasket: (state, action) => {
+      state.basketProducts = []
+      state.countProductsBasket = counter(state.basketProducts)
+      // state.countProductsBasket = state.basketProducts.length
+      state.sumPriceProductsBasket = state.basketProducts.reduce((acc, cur) => {
+        return acc + cur.price
+      }, 0)
+    },
     
     removeProductBasket: (state, action) => {
       state.basketProducts = state.basketProducts.filter((item) => {
@@ -43,5 +52,5 @@ export const productsSlice = createSlice({
   }
 })
 
-export const {addProductsBasket, removeProductBasket} = productsSlice.actions
+export const {addProductsBasket, removeProductBasket, clearBasket} = productsSlice.actions
 export default productsSlice.reducer

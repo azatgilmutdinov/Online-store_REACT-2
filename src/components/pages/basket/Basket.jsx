@@ -6,9 +6,11 @@ import styles from './Basket.module.css'
 import {Link} from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import { clearBasket } from '../../../store/reducers/productsReducers'
+import { useDispatch } from 'react-redux'
 
 const Basket = () => {
-  const productsBasket = useSelector(state => state.productsList.basketProducts)
+  let productsBasket = useSelector(state => state.productsList.basketProducts)
 
   const sumPrice = useSelector(state => state.productsList.sumPriceProductsBasket)
 
@@ -18,6 +20,14 @@ const Basket = () => {
   const logOut = () => {
     localStorage.removeItem('authorization')
     navigatePage('/')
+  }
+
+  const dispatch = useDispatch();
+
+  const submitBasket = () => {
+    alert('Заказ сформирован, ожидайте')
+    dispatch(clearBasket())
+
   }
 
   return (
@@ -52,6 +62,7 @@ const Basket = () => {
           <Button 
             text='Оформить заказ' 
             typeBtn='orange'
+            onclickFunction={submitBasket}
           />
         </div>
         
