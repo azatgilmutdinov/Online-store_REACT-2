@@ -5,6 +5,8 @@ import './FormReg.css'
 import Button from '../UI/Button/Button'
 import { Link } from 'react-router-dom'
 import { CheckboxForm } from '../elements/checkboxForm/CheckboxForm'
+import { useNavigate } from 'react-router-dom'
+
 
 const FormReg = () => {
   const {
@@ -19,6 +21,7 @@ const FormReg = () => {
     mode: 'onBlur' //проверка на ошибки после фокуса на input
   })
 
+  const navigatePage = useNavigate()
 
   //Функции получения и записывания данных пользователя
   function getLocalStorage(key) {
@@ -55,6 +58,8 @@ const FormReg = () => {
     usersArr.push(userDBReg);//записываем пользователя в массив (если он есть)
     writeLocalStorage('users', usersArr);
     alert('Регистрация прошла успешно! Теперь войдите в личный кабинет');
+    navigatePage('/')
+
 
 
 

@@ -5,8 +5,11 @@ import './FormReg.css'
 import Button from '../UI/Button/Button'
 import { Link } from 'react-router-dom'
 import { CheckboxForm } from '../elements/checkboxForm/CheckboxForm'
+import { useNavigate } from 'react-router-dom'
+import { useState } from 'react'
 
 const FormAuthor = () => {
+
   const {
     register,
     formState: {
@@ -19,6 +22,8 @@ const FormAuthor = () => {
     mode: 'onBlur' //проверка на ошибки после фокуса на input
   })
 
+  const navigatePage = useNavigate()
+
   //Функции получения  данных пользователя
   function getLocalStorage(key) {
     let string = localStorage.getItem(key);
@@ -29,7 +34,6 @@ const FormAuthor = () => {
   let usersArr = getLocalStorage('users');
 
   const onSubmitDB = (dataBase) => {
-    // alert(JSON.stringify(dataBase))
     
     userDBAuthor.Login = dataBase.Login;
     userDBAuthor.Password = dataBase.Password;
@@ -38,9 +42,11 @@ const FormAuthor = () => {
     usersArr.forEach(item => {
       if (item.Login === userDBAuthor.Login && item.Password === userDBAuthor.Password) {
         alert('Авторизация прошла успешно!');
-        //перекидывает на главную страницу
+        navigatePage('/product')
+
       } else {
-        console.log('все работает')
+        navigatePage('/')
+
         //показывает ошибку в форме - посередине красным ('логин или пароль неверный')
       }
     })
@@ -88,6 +94,7 @@ const FormAuthor = () => {
             {errors?.Password && <p className='form__text-error'>{errors?.Password?.message || 'Проверьте заполнение поля'}</p>}
           </div>
           <CheckboxForm/>
+
           <div className="form__button-wrapper">
             <Button
               text='Авторизоваться'
