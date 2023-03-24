@@ -1,15 +1,14 @@
 import React from 'react'
+// import Form from '../blocks/FormReg/Form'
 import { useForm } from 'react-hook-form'
-import './FormReg.css'
-import Button from '../UI/Button/Button'
+import './Form.css'
+import Button from '../../UI/Button/Button'
 import { Link } from 'react-router-dom'
-import { CheckboxForm } from '../elements/checkboxForm/CheckboxForm'
+import { CheckboxForm } from '../../elements/checkboxForm/CheckboxForm'
 import { useNavigate } from 'react-router-dom'
-import { useState } from 'react'
-import { getLocalStorage, writeLocalStorage } from '../../functions/functions'
+import { getLocalStorage, writeLocalStorage } from '../../../functions/functions'
 
-const FormAuthor = () => {
-
+const FormReg = () => {
   const {
     register,
     formState: {
@@ -17,43 +16,49 @@ const FormAuthor = () => {
       isValid,
     },
     handleSubmit,
+    reset, //для очистки формы
   } = useForm({
     mode: 'onBlur' //проверка на ошибки после фокуса на input
   })
 
   const navigatePage = useNavigate()
 
-  let userDBAuthor = {};
+  let userDBReg = {};
   let usersArr = getLocalStorage('users');
 
-  const [errorText, setErrorText] = useState(false)
-
   const onSubmitDB = (dataBase) => {
+    userDBReg.Login = dataBase.Login;
+    userDBReg.Password = dataBase.Password;
 
-    userDBAuthor.Login = dataBase.Login;
-    userDBAuthor.Password = dataBase.Password;
+    if (usersArr == null) {
+      usersArr = [];
+    } else {
+      usersArr.forEach(item => {
+        if (item.Login == dataBase.Login) {
+          alert('такой пользователь уже существует');
+          userDBReg.remove()
+        }
+      })
+    }
 
-    usersArr.forEach(item => {
-      if (item.Login !== userDBAuthor.Login && item.Password !== userDBAuthor.Password) {
-        setErrorText(true)
-        return
-      } else if (item.Login === userDBAuthor.Login && item.Password === userDBAuthor.Password) {
-        alert('Авторизация прошла успешно!')
-        writeLocalStorage('authorization', 'true');
-        navigatePage('/product')
-      }
-    })
+    usersArr.push(userDBReg);//записываем пользователя в массив (если он есть)
+    writeLocalStorage('users', usersArr);
+
+    alert('Регистрация прошла успешно! Теперь войдите в личный кабинет');
+    navigatePage('/')
+
+    reset()//для очистки формы
   }
 
   return (
-    <div className='formAuthor'>
+    <div className='formReg' >
       <form action="" className='form' onSubmit={handleSubmit(onSubmitDB)}>
-        <Link to='/registration' className="form__link">Зарегистрироваться</Link>
-        <h2 className="form__title">Вход</h2>
+        <Link to='/' className="form__link">Авторизоваться</Link>
+        <h2 className="form__title">Регистрация</h2>
         <div className="form__input-wrapper">
-          <input
+          <input 
             className='form__input'
-            type="text"
+            type="text" 
             placeholder='Логин'
             {...register('Login', {
               required: 'Поле не должно быть пустым',
@@ -61,17 +66,17 @@ const FormAuthor = () => {
                 value: 4,
                 message: 'Логин должен содержать не менее 4-х символов'
               },
-            })}
+            })} 
           />
           {/* <div> */}
             {errors?.Login && <p className='form__text-error'>{errors?.Login?.message || 'Проверьте заполнение поля'}</p>}
           {/* </div> */}
         </div>
-
+        
         <div className="form__input-wrapper">
-          <input
+          <input 
             className='form__input'
-            type="password"
+            type="password" 
             placeholder='Пароль'
             {...register('Password', {
               required: 'Поле не должно быть пустым',
@@ -79,20 +84,17 @@ const FormAuthor = () => {
                 value: 4,
                 message: 'Пароль должен содержать не менее 4-х символов'
               }
-            })}
+            })} 
           />
           {/* <div> */}
             {errors?.Password && <p className='form__text-error'>{errors?.Password?.message || 'Проверьте заполнение поля'}</p>}
           {/* </div> */}
         </div>
-        <CheckboxForm />
 
-        {errorText ? <p className='form__text-error-center'>Логин или пароль не верный</p> : ''}
-
-
+        <CheckboxForm/>
         <div className="form__button-wrapper">
           <Button
-            text='Авторизоваться'
+            text='Зарегистрироваться'
             typeBtn="orange"
             disabled={!isValid}
           />
@@ -102,4 +104,4 @@ const FormAuthor = () => {
   )
 }
 
-export default FormAuthor
+export default FormReg

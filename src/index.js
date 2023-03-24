@@ -13,8 +13,8 @@ import ProductBody from './components/pages/productBody/ProductBody';
 import GeneralPage from './components/pages/general/GeneralPage';
 import { Provider } from 'react-redux';
 import { store } from './store/store';
-import FormAuthor from './components/pages/FormAuthor';
-import FormReg from './components/pages/FormReg';
+import FormReg from './components/pages/general/FormReg';
+import FormAuthor from './components/pages/general/FormAuthor';
 
 const router = createBrowserRouter([
   {
