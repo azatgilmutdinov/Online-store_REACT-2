@@ -15,6 +15,7 @@ import { Provider } from 'react-redux';
 import { store } from './store/store';
 import FormReg from './components/pages/general/FormReg';
 import FormAuthor from './components/pages/general/FormAuthor';
+import ErrorPage from './components/pages/errorPage/ErrorPage';
 
 const router = createBrowserRouter([
   {
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
   {
     path: "/product/:id",
     element: <ProductBody/>,
+  },
+  {
+    path: "/*",
+    element: <ErrorPage/>,
   },
 ]);
 
