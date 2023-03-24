@@ -33,19 +33,26 @@ const FormAuthor = () => {
   let userDBAuthor = {};
   let usersArr = getLocalStorage('users');
 
+  const [errorText, setErrorText] = useState(false)
+
   const onSubmitDB = (dataBase) => {
-    
+
     userDBAuthor.Login = dataBase.Login;
     userDBAuthor.Password = dataBase.Password;
     // console.log('userDBReg - ', userDBReg);
 
     usersArr.forEach(item => {
-      if (item.Login === userDBAuthor.Login && item.Password === userDBAuthor.Password) {
-        alert('Авторизация прошла успешно!');
+      if (item.Login !== userDBAuthor.Login && item.Password !== userDBAuthor.Password) {
+        setErrorText(true)
+        return
+      } else if (item.Login === userDBAuthor.Login && item.Password === userDBAuthor.Password) {
+        alert('Авторизация прошла успешно!')
         navigatePage('/product')
 
-      } else {
-        navigatePage('/')
+
+
+
+        // navigatePage('/')
 
         //показывает ошибку в форме - посередине красным ('логин или пароль неверный')
       }
@@ -54,55 +61,58 @@ const FormAuthor = () => {
 
   return (
     <div className='formAuthor'>
-        <form action="" className='form' onSubmit={handleSubmit(onSubmitDB)}>
-          <Link to='/registration' className="form__link">Зарегистрироваться</Link>
-          <h2 className="form__title">Вход</h2>
-          <input 
-            className='form__input'
-            type="text" 
-            placeholder='Логин'
-            {...register('Login', {
-              required: 'Поле не должно быть пустым',
-              minLength: {
-                value: 4,
-                message: 'Логин должен содержать не менее 4-х символов'
-              },
-              // pattern: {
-              //   value: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-              //   message: 'Не валидный'
-              // }
-            })} 
+      <form action="" className='form' onSubmit={handleSubmit(onSubmitDB)}>
+        <Link to='/registration' className="form__link">Зарегистрироваться</Link>
+        <h2 className="form__title">Вход</h2>
+        <input
+          className='form__input'
+          type="text"
+          placeholder='Логин'
+          {...register('Login', {
+            required: 'Поле не должно быть пустым',
+            minLength: {
+              value: 4,
+              message: 'Логин должен содержать не менее 4-х символов'
+            },
+            // pattern: {
+            //   value: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+            //   message: 'Не валидный'
+            // }
+          })}
+        />
+        <div>
+          {errors?.Login && <p className='form__text-error'>{errors?.Login?.message || 'Проверьте заполнение поля'}</p>}
+        </div>
+
+
+        <input
+          className='form__input'
+          type="password"
+          placeholder='Пароль'
+          {...register('Password', {
+            required: 'Поле не должно быть пустым',
+            minLength: {
+              value: 4,
+              message: 'Пароль должен содержать не менее 4-х символов'
+            }
+          })}
+        />
+        <div>
+          {errors?.Password && <p className='form__text-error'>{errors?.Password?.message || 'Проверьте заполнение поля'}</p>}
+        </div>
+        <CheckboxForm />
+
+        {errorText ? <div className='form__text-error'>Логин или пароль не верный</div> : ''}
+
+
+        <div className="form__button-wrapper">
+          <Button
+            text='Авторизоваться'
+            typeBtn="orange"
+            disabled={!isValid}
           />
-          <div>
-            {errors?.Login && <p className='form__text-error'>{errors?.Login?.message || 'Проверьте заполнение поля'}</p>}
-          </div>
-
-
-          <input 
-            className='form__input'
-            type="password" 
-            placeholder='Пароль'
-            {...register('Password', {
-              required: 'Поле не должно быть пустым',
-              minLength: {
-                value: 4,
-                message: 'Пароль должен содержать не менее 4-х символов'
-              }
-            })} 
-          />
-          <div>
-            {errors?.Password && <p className='form__text-error'>{errors?.Password?.message || 'Проверьте заполнение поля'}</p>}
-          </div>
-          <CheckboxForm/>
-
-          <div className="form__button-wrapper">
-            <Button
-              text='Авторизоваться'
-              typeBtn="orange"
-              disabled={!isValid}
-            />
-          </div>
-        </form>
+        </div>
+      </form>
 
 
 
