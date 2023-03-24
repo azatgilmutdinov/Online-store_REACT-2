@@ -24,10 +24,14 @@ const FormAuthor = () => {
 
   const navigatePage = useNavigate()
 
-  //Функции получения  данных пользователя
+  //Функции получения и записывания данных пользователя
   function getLocalStorage(key) {
     let string = localStorage.getItem(key);
     return JSON.parse(string);
+  }
+
+  function writeLocalStorage(key, value) {
+    localStorage.setItem(key, JSON.stringify(value));
   }
 
   let userDBAuthor = {};
@@ -47,6 +51,7 @@ const FormAuthor = () => {
         return
       } else if (item.Login === userDBAuthor.Login && item.Password === userDBAuthor.Password) {
         alert('Авторизация прошла успешно!')
+        writeLocalStorage('authorization', 'true');
         navigatePage('/product')
 
 

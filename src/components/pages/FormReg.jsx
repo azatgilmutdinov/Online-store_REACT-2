@@ -57,6 +57,7 @@ const FormReg = () => {
 
     usersArr.push(userDBReg);//записываем пользователя в массив (если он есть)
     writeLocalStorage('users', usersArr);
+
     alert('Регистрация прошла успешно! Теперь войдите в личный кабинет');
     navigatePage('/')
 
@@ -68,7 +69,6 @@ const FormReg = () => {
 
   return (
     <div className='formReg' >
-
       <form action="" className='form' onSubmit={handleSubmit(onSubmitDB)}>
         <Link to='/' className="form__link">Авторизоваться</Link>
         <h2 className="form__title">Регистрация</h2>

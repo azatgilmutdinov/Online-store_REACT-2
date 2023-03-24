@@ -6,11 +6,19 @@ import styles from './Products.module.css'
 import { useSelector } from 'react-redux'
 import BasketData from '../../elements/basketData/BasketData.jsx'
 import Button from '../../UI/Button/Button.jsx'
+import { useNavigate } from 'react-router-dom'
 
 
 
 const Products = () => {
   const products = useSelector(state => state.productsList.productsList)
+
+  const navigatePage = useNavigate()
+
+  const logOut = () => {
+    localStorage.removeItem('authorization')
+    navigatePage('/')
+  }
 
   return (
 
@@ -22,7 +30,7 @@ const Products = () => {
           <BasketData/>
           <Button 
             text='Выйти'
-            typeBtn=''
+            onclickFunction={logOut}
           />
         </div>
 

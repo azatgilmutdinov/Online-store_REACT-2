@@ -5,12 +5,20 @@ import Button from '../../UI/Button/Button'
 import styles from './Basket.module.css'
 import {Link} from 'react-router-dom'
 import { useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 
 const Basket = () => {
   const productsBasket = useSelector(state => state.productsList.basketProducts)
 
   const sumPrice = useSelector(state => state.productsList.sumPriceProductsBasket)
 
+
+  const navigatePage = useNavigate()
+
+  const logOut = () => {
+    localStorage.removeItem('authorization')
+    navigatePage('/')
+  }
 
   return (
     <div className={styles.basketPage}>
@@ -24,6 +32,7 @@ const Basket = () => {
           </div>
           <Button
             text='Выйти'
+            onclickFunction={logOut}
           />
         </div>
       </header>

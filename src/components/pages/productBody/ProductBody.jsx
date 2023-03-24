@@ -7,6 +7,7 @@ import { useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { useDispatch } from 'react-redux'
 import { addProductsBasket } from '../../../store/reducers/productsReducers'
+import { useNavigate } from 'react-router-dom'
 
 
 const ProductBody = () => {
@@ -33,6 +34,13 @@ const ProductBody = () => {
     dispatch(addProductsBasket(item))
   }
 
+  const navigatePage = useNavigate()
+
+  const logOut = () => {
+    localStorage.removeItem('authorization')
+    navigatePage('/')
+  }
+
 
   return (
     <div className={styles.productBody}>
@@ -43,7 +51,7 @@ const ProductBody = () => {
             <BasketData/>
             <Button 
               text='Выйти'
-              typeBtn=''
+              onclickFunction={logOut}
             />
           </div>
 
