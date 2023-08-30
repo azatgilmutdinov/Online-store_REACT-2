@@ -1,0 +1,32 @@
+.products {
+  color: #fff;
+  background-color: #161516;
+}
+.container {
+  max-width: 1330px;
+  padding: 0 15px; /*отступ безопасности, чтобы не слипался с краями*/
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px 0;
+}
+.title {
+  font-weight: 700;
+  font-size: 31px;
+  line-height: 38px;
+  text-transform: uppercase;
+}
+
+.basket-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.basket-btn > button {
+  margin-left: 22px;
+}

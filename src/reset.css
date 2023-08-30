@@ -1,0 +1,57 @@
+*,
+*::before,
+*::after {
+	padding: 0;
+	margin: 0;
+	border: 0;
+	box-sizing: border-box;
+}
+a {
+	text-decoration: none;
+}
+ul,
+ol,
+li {
+	list-style: none;
+}
+img {
+	vertical-align: top;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: inherit;
+	font-size: inherit;
+}
+html,
+body {
+	height: 100%;
+	font-size: 14px; /*базовый размер шрифта*/
+	font-family: 'Montserrat', sans-serif;/*базовый шрифт*/
+	color: #fff;/*базовый цвет шрифта*/
+}
+
+
+/*СТИЛИЗАЦИЯ СКРОЛЛА*/
+
+* {
+		scrollbar-width: thin;
+		scrollbar-color:  rgb(172, 113, 2);
+	}
+	
+/* для Chrome/Edge/Safari */
+*::-webkit-scrollbar {
+	height: 12px;
+	width: 12px;
+}
+*::-webkit-scrollbar-track {
+	background: rgb(53, 50, 50);
+}
+*::-webkit-scrollbar-thumb {
+	background-color: rgb(38, 22, 11);
+	border-radius: 5px;
+	border: 1px solid rgb(21, 17, 17);
+}

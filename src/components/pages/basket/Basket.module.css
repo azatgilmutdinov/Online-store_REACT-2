@@ -1,0 +1,89 @@
+.basketPage {
+  height: 100vh;
+  color: #fff;
+  background-color: #161516;
+  overflow-x: hidden; /*для горизонтальной полоски в футере*/
+}
+
+.basketPage__header {
+  padding: 50px 0 38px 0;
+}
+
+.basketPage__header-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.basketPage__header-blockIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.basketPage__header-title {
+  margin-left: 63px;
+
+  font-weight: 700;
+  font-size: 31px;
+  line-height: 38px;
+  text-transform: uppercase;
+}
+
+.basketPage__main {
+}
+
+.basketPage__main-container, .basketPage__footer-container {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.basketPage__main-container{
+  height: calc(100vh - 224px);
+  /* margin: 29px 0 67px 0; */
+  overflow-x: auto;
+}
+
+.basketPage__footer {
+  position: relative;
+  padding: 20px 0 27px 0;
+}
+
+.basketPage__footer::before, .basketPage__footer::after {
+  position: absolute;
+  content: '';
+  background-color: #D58C51;
+  width: 100vw;
+  height: 1px;
+  top: 0;
+  bottom: 0;
+}
+.basketPage__footer::before {
+  right: 0;
+}
+.basketPage__footer::after {
+}
+
+.basketPage__footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.basketPage__footer-text {
+  font-size: 21px;
+  line-height: 26px;
+  text-transform: uppercase;
+
+  color: #FFFFFF;
+}
+
+.basketPage__footer-sum {
+  margin-left: 16px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  color: #D58C51;
+}
+

@@ -1,0 +1,12 @@
+.generalPage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 100vh;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url('../../../../public/images/bg_general.jpg');
+}
+

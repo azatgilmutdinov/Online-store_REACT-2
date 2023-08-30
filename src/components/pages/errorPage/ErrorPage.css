@@ -1,0 +1,12 @@
+.error__wrapper{
+  height: 100vh;
+  background-color: #8e897f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.error__title {
+  font-size: 1.9vw;
+  color: #000;
+}

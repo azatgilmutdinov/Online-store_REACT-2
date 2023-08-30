@@ -1,0 +1,15 @@
+.addition {
+  display: block;
+  padding: 9px;
+  border: 2px solid #fff;
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+.addition:hover {
+  border: 2px solid #D58C51;
+  background-color: #D58C51;
+}
+.btnBasket {
+  display: block;
+}

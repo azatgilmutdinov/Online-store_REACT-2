@@ -1,0 +1,69 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 24%;
+  height: 552px;
+  padding: 43px 21px 32px 21px;
+  border: 1px solid #D58C51;
+  color: #FFF;
+}
+
+.card:hover {
+  color: #D58C51;
+  border: 1px solid #934809;
+  background-color: rgb(31, 31, 31);
+  cursor: pointer;
+}
+
+.title {
+  margin-top: 31px;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 21px;
+}
+
+.descr {
+  flex: 1;
+  margin-top: 10px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.price-weight-btnBasket {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price {
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 21px;
+}
+
+.weight{
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.amountCount {
+  padding-left: 10px;
+  color: rgb(0, 255, 51);
+  font-size: 10px;
+}
+
+@media screen and (max-width: 1030px) {
+  .card {
+    width: 32%;
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 830px) {
+  .card {
+    width: 48%;
+
+  }
+}
